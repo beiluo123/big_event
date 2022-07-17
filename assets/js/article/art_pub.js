@@ -8,6 +8,7 @@ $(function () {
 
   // 定义加载文章分类的方法
   function initCate() {
+
     $.ajax({
       method: 'GET',
       url: '/my/article/cates',
@@ -112,6 +113,9 @@ $(function () {
         // 发布文章成功后，跳转到文章列表页面
         setTimeout(() => {
           location.href = '/article/art_list.html'
+          parent.document.getElementsByClassName('layui-nav-child')[1].children[1].className = 'layui-this'
+          parent.document.getElementsByClassName('layui-nav-child')[1].children[2].className = ''
+
         }, 1000)
       }
     })
